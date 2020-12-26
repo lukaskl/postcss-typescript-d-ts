@@ -11,7 +11,15 @@
     "css modules"
   ],
   "scripts": {
-    "test": "jest-ci --coverage && eslint-ci ."
+    "test": "npm-run-all -p test:watch lint:watch",
+    "test:ci": "jest",
+    "test:watch": "yarn test:ci --watchAll",
+    "lint": "yarn lint:es && yarn lint:type-check",
+    "lint:watch": "npm-run-all -p lint:es:watch lint:type-check:watch",
+    "lint:es": "esw . --ext .ts,.js --color",
+    "lint:es:watch": "yarn lint:es --watch",
+    "lint:type-check": "tsc --noemit --project ./tsconfig.json",
+    "lint:type-check:watch": "yarn lint:type-check --watch"
   },
   "author": "Lukas <lukas@klusis.com>",
   "license": "MIT",
@@ -23,35 +31,21 @@
     "postcss": "^8.1.5"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.19",
+    "@typescript-eslint/eslint-plugin": "^4.11.0",
+    "@typescript-eslint/parser": "^4.11.0",
     "clean-publish": "^1.1.8",
     "eslint": "^7.14.0",
+    "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-jest-formatting": "^2.0.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-watch": "^7.0.0",
     "jest": "^26.4.2",
-    "postcss": "^8.1.5"
-  },
-
-  "eslintConfig": {
-    "parserOptions": {
-      "ecmaVersion": 2017
-    },
-    "env": {
-      "node": true,
-      "es6": true
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:jest/recommended"
-    ],
-    "rules": {
-      "jest/expect-expect": "off"
-    }
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "coverageThreshold": {
-      "global": {
-        "statements": 100
-      }
-    }
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.1.5",
+    "prettier": "^2.2.1",
+    "prettier-eslint": "^12.0.0",
+    "ts-jest": "^26.4.4"
   }
 }

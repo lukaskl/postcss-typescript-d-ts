@@ -1,5 +1,4 @@
-module.exports = (opts = { }) => {
-
+const plugin = (opts = {}) => {
   // Work with options here
 
   return {
@@ -25,4 +24,5 @@ module.exports = (opts = { }) => {
     */
   }
 }
-module.exports.postcss = true
+export const postcss = true
+export default plugin
