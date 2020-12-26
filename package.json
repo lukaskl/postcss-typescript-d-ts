@@ -1,7 +1,10 @@
 {
   "name": "postcss-typescript-d-ts",
+  "author": "Lukas <lukas@klusis.com>",
+  "license": "MIT",
+  "repository": "lukaskl/postcss-typescript-d-ts",
   "version": "0.0.0",
-  "description": "TODO - write a description",
+  "description": "Generates TypeScript definition (.d.ts) files for each of the postcss modules file",
   "keywords": [
     "postcss",
     "css",
@@ -11,9 +14,9 @@
     "css modules"
   ],
   "scripts": {
-    "test": "npm-run-all -p test:watch lint:watch",
+    "test": "yarn test:watch",
     "test:ci": "jest",
-    "test:watch": "yarn test:ci --watchAll",
+    "test:watch": "jest --watchAll",
     "lint": "yarn lint:es && yarn lint:type-check",
     "lint:watch": "npm-run-all -p lint:es:watch lint:type-check:watch",
     "lint:es": "esw . --ext .ts,.js --color",
@@ -21,11 +24,11 @@
     "lint:type-check": "tsc --noemit --project ./tsconfig.json",
     "lint:type-check:watch": "yarn lint:type-check --watch"
   },
-  "author": "Lukas <lukas@klusis.com>",
-  "license": "MIT",
-  "repository": "lukaskl/postcss-typescript-d-ts",
   "engines": {
     "node": ">=10.0.0"
+  },
+  "dependencies": {
+    "postcss-selector-parser": "^6.0.4"
   },
   "peerDependencies": {
     "postcss": "^8.1.5"
@@ -44,6 +47,9 @@
     "jest": "^26.4.2",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.1.5",
+    "postcss-modules": "^4.0.0",
+    "postcss-nested": "^5.0.3",
+    "postcss-nesting": "^7.0.1",
     "prettier": "^2.2.1",
     "prettier-eslint": "^12.0.0",
     "ts-jest": "^26.4.4"
