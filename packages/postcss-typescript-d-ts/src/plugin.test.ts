@@ -23,7 +23,7 @@ const getProcessor = (opts: ProcessOptions = {}) => {
 
   const process = async (cssInput: string) =>
     await processor.process(cssInput, {
-      from: __dirname,
+      from: '/fake/path/to/file',
       to: undefined,
     })
 
@@ -235,8 +235,8 @@ it('transform content', async () => {
   expect(content).toMatchInlineSnapshot(`
     "{
       \\"paths\\": {
-        \\"cssFile\\": \\"/Users/lukasklusis/Development/lukaskl/postcss-typescript-d-ts/packages/postcss-typescript-d-ts/src\\",
-        \\"dtsFile\\": \\"/Users/lukasklusis/Development/lukaskl/postcss-typescript-d-ts/packages/postcss-typescript-d-ts/src.d.ts\\"
+        \\"cssFile\\": \\"/fake/path/to/file\\",
+        \\"dtsFile\\": \\"/fake/path/to/file.d.ts\\"
       },
       \\"parts\\": {
         \\"classes\\": [
