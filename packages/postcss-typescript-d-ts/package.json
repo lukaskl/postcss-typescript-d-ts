@@ -1,6 +1,6 @@
 {
+  "author": "Lukas Klusis <lukas@klusis.com>",
   "name": "postcss-typescript-d-ts",
-  "author": "Lukas <lukas@klusis.com>",
   "license": "MIT",
   "repository": "lukaskl/postcss-typescript-d-ts",
   "version": "0.0.0",
@@ -17,7 +17,7 @@
     "test": "yarn test:watch",
     "test:ci": "jest",
     "test:watch": "jest --watchAll",
-    "build": "tsc --project ./tsconfig.json",
+    "build": "ts-node build.ts",
     "lint": "yarn lint:es && yarn lint:type-check",
     "lint:watch": "npm-run-all -p lint:es:watch lint:type-check:watch",
     "lint:es": "esw . --ext .ts,.js --color",
@@ -38,6 +38,7 @@
     "@types/jest": "^26.0.19",
     "@typescript-eslint/eslint-plugin": "^4.11.0",
     "@typescript-eslint/parser": "^4.11.0",
+    "chalk": "^4.1.0",
     "clean-publish": "^1.1.8",
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^7.1.0",
@@ -53,6 +54,8 @@
     "postcss-nesting": "^7.0.1",
     "prettier": "^2.2.1",
     "prettier-eslint": "^12.0.0",
-    "ts-jest": "^26.4.4"
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
   }
 }

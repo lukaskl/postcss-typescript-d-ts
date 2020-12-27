@@ -16,9 +16,11 @@ jobs:
         with:
           node-version: 15
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: yarn install
+      - name: Build files
+        run: yarn build
       - name: Run tests
-        run: yarn test
+        run: yarn test:ci
   short:
     runs-on: ubuntu-latest
     strategy:
@@ -36,6 +38,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
-      - name: Run unit tests
-        run: npx jest
+        run: yarn install
+      - name: Build files
+        run: yarn build
+      - name: Run tests
+        run: yarn test:ci

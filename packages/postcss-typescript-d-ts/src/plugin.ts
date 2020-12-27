@@ -3,10 +3,20 @@ import { Plugin } from 'postcss'
 import { defaultWriteFile, getClasses, WriteFileProps } from './utils'
 
 export interface TypeScriptDefinitionsPluginOptions {
+  /**
+   * Custom handler which is called when a new generated file would be written.
+   * If `writeFile` is passed, original `writeFile` would not be called.
+   */
   writeFile?: (props: WriteFileProps) => Promise<void> | void
+  /**
+   * Transform content before writing it to the file.
+   */
   transformContent?: (props: WriteFileProps) => Promise<string> | string
+  /** Add extra content items either to the top or bottom of the file */
   extra?: {
+    /** Add extra content to the top of the file */
     header?: string
+    /** Add extra content to the bottom of the file */
     footer?: string
   }
 }
