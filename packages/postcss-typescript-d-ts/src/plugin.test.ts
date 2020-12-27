@@ -234,8 +234,8 @@ it('transform content', async () => {
   expect(content).toMatchInlineSnapshot(`
     "{
       \\"paths\\": {
-        \\"cssFile\\": \\"/Users/lukasklusis/Development/lukaskl/postcss-typescript-d-ts/src\\",
-        \\"dtsFile\\": \\"/Users/lukasklusis/Development/lukaskl/postcss-typescript-d-ts/src.d.ts\\"
+        \\"cssFile\\": \\"/Users/lukasklusis/Development/lukaskl/postcss-typescript-d-ts/packages/postcss-typescript-d-ts/src\\",
+        \\"dtsFile\\": \\"/Users/lukasklusis/Development/lukaskl/postcss-typescript-d-ts/packages/postcss-typescript-d-ts/src.d.ts\\"
       },
       \\"parts\\": {
         \\"classes\\": [

@@ -5,12 +5,12 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Jest Tests",
+      "name": "Jest Tests (postcss-typescript-d-ts)",
       "type": "node",
       "request": "launch",
+      "cwd": "${workspaceFolder}/packages/postcss-typescript-d-ts",
       "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/jest",
       "args": ["--runInBand", "--no-cache"],
-      "cwd": "${workspaceRoot}",
       "protocol": "inspector",
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
