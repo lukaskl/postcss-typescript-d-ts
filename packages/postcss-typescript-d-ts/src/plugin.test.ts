@@ -12,6 +12,7 @@ const noop = () => {}
 interface ProcessOptions extends TypeScriptDefinitionsPluginOptions {
   extraPlugins?: AcceptedPlugin[]
 }
+
 const getProcessor = (opts: ProcessOptions = {}) => {
   const { extraPlugins = [], ...tsOptions }: typeof opts = opts
   const processor = postcss([
@@ -252,8 +253,8 @@ it('transform content (real life example)', async () => {
   const writeFile = jest.fn()
   const { process } = getProcessor({
     writeFile,
-    transformContent: (props) =>
-      prettier.format(props.content, {
+    transformContent: ({ content }) =>
+      prettier.format(content, {
         parser: 'typescript',
         singleQuote: true,
       }),

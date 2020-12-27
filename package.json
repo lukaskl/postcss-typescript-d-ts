@@ -5,7 +5,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "lerna exec -- yarn test"
+    "build": "lerna run build",
+    "test": "lerna exec -- yarn test",
+    "test:ci": "lerna exec -- yarn test:ci"
   },
   "devDependencies": {
     "lerna": "^3.20.2"

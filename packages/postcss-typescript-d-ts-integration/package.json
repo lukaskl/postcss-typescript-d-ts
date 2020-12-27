@@ -1,0 +1,18 @@
+{
+  "name": "postcss-typescript-d-ts-integration",
+  "author": "Lukas <lukas@klusis.com>",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "postcss './styles/*.pcss' --dir './styles' --ext .css",
+    "lint:type-check": "tsc --noemit --project ./tsconfig.json",
+    "test:ci": "yarn build && yarn lint:type-check"
+  },
+  "dependencies": {
+    "postcss": "^8.2.1",
+    "postcss-cli": "^8.3.1",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-selector-parser": "^6.0.4",
+    "postcss-typescript-d-ts": "*"
+  }
+}

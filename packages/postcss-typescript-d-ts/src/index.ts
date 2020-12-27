@@ -1,4 +1,3 @@
 import { plugin } from './plugin'
 
-module.exports = plugin
-module.exports.postcss = true
+export = Object.assign(plugin, { postcss: true })

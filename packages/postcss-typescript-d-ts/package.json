@@ -17,6 +17,7 @@
     "test": "yarn test:watch",
     "test:ci": "jest",
     "test:watch": "jest --watchAll",
+    "build": "tsc --project ./tsconfig.json",
     "lint": "yarn lint:es && yarn lint:type-check",
     "lint:watch": "npm-run-all -p lint:es:watch lint:type-check:watch",
     "lint:es": "esw . --ext .ts,.js --color",

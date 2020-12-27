@@ -1,5 +1,10 @@
 node_modules/
 npm-debug.log
 yarn-error.log
+tsconfig.tsbuildinfo
 
 coverage/
+dist/
+
+packages/postcss-typescript-d-ts-integration/styles/**/*.pcss.d.ts
+packages/postcss-typescript-d-ts-integration/styles/**/*.css
